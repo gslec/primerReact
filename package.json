@@ -1,10 +1,10 @@
 {
   "name": "PlatziVideo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,21 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  }
+    "react-dom": "^16.13.1",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.2.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GinnioSarabia/primerReact.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GinnioSarabia/primerReact/issues"
+  },
+  "homepage": "https://github.com/GinnioSarabia/primerReact#readme",
+  "description": ""
 }
