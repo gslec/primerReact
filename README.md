@@ -19,4 +19,11 @@ npm install react react-dom
 npm install @babel/core babel-loader @babel/preset-env @babel/preset-react --save -dev
 ```
 
+### WebPack
+1. Instala WebPack
+``` powershell
+npm install webpack-cli html-webpack-plugin html-loader
+```
+
+
 
