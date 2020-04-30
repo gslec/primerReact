@@ -30,4 +30,15 @@ npm install webpack webpack-cli html-webpack-plugin html-loader --save-dev
 npm install webpack-dev-server --save-dev
 ```
 
+### Saas
+1. Instala Saas
+``` powershell
+npm install --save-dev mini-css-extract-plugin css-loader node-sass sass-loader
+```
+
+### ESlint
+1.
+``` powershell
+npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
+'''
 
