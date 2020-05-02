@@ -42,3 +42,10 @@ npm install --save-dev mini-css-extract-plugin css-loader node-sass sass-loader
 npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
 '''
 
+### Instala Json-Server para la creación de una Fake Api
+1.
+``` powershell
+sudo npm install json-server -g
+'''
+
+
