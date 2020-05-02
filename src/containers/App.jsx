@@ -5,13 +5,34 @@ import Search from '../componets/Search';
 import Categories from '../componets/Categories';
 import Carousel from '../componets/Carousel';
 import CarouselItem from '../componets/CarouselItem';
+import Footer from '../componets/Footer';
 
 const App = () => (
   <div className='App'>
     <Header />
     <Search />
-    <Categories>
+
+    <Categories title='Tendencias'>
       <Carousel>
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+      </Carousel>
+    </Categories>
+
+    <Categories title='Originales de Platzi Video'>
+      <Carousel>
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+      </Carousel>
+    </Categories>
+
+    <Categories title='Mi lista'>
+      <Carousel>
+        <CarouselItem />
         <CarouselItem />
         <CarouselItem />
         <CarouselItem />
@@ -19,6 +40,8 @@ const App = () => (
         <CarouselItem />
       </Carousel>
     </Categories>
+
+    <Footer />
   </div>
 );
 export default App;

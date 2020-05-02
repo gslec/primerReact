@@ -22,7 +22,7 @@ npm install @babel/core babel-loader @babel/preset-env @babel/preset-react --sav
 ### WebPack
 1. Instala WebPack
 ``` powershell
-npm install webpack webpack-cli html-webpack-plugin html-loader --save-dev
+npm install webpack webpack-cli html-webpack-plugin html-loader file-loader --save-dev
 ```
 
 2. Instala WebPack Server
