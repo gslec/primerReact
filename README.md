@@ -40,5 +40,11 @@ npm install --save-dev mini-css-extract-plugin css-loader node-sass sass-loader
 1.
 ``` powershell
 npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
-'''
+```
+
+### PropTypes
+1. Los PropTypes son una propiedad de nuestros componentes que nos permiten especificar qué tipo de elementos son nuestras props: arrays, strings, números, etc.
+``` powershell
+npm install --save prop-types
+```
 
