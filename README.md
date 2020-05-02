@@ -47,4 +47,10 @@ npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-im
 ``` powershell
 npm install --save prop-types
 ```
+### JSON_SERVER
+1. Instala Json-Server para la creación de una Fake Api
+``` powershell
+sudo npm install json-server -g
+```
+
 
