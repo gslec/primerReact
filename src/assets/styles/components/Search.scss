@@ -1,4 +1,4 @@
-
+@import '../Vars.scss';
 .main {
     display: flex;
     align-items: center;
@@ -6,6 +6,7 @@
     flex-direction: column;
     height: 300px;
     border-radius: 0px 0px 40px 40px;
+    background-color: $main-color;
   }
   
   .main__title {

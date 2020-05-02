@@ -16,10 +16,23 @@ module.exports = {
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../'),
-    });
+    },
+
+    {
+      test: /\.(png|gif|jpg)$/,
+      use: [{
+        'loader': 'file-loader',
+        options: {
+          name: 'assets/[hash].[ext]',
+        },
+      },
+      ],
+
+    },    
+    
+    );
 
     // Return the altered config
     return config;
   }
 };
-copy
