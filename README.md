@@ -53,4 +53,10 @@ npm install --save prop-types
 sudo npm install json-server -g
 ```
 
+### Redux
+1. Instalación de Redux y React-Redux
+``` powershell
+npm install redux react-redux --save
+```
+
 

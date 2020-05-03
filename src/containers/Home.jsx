@@ -1,43 +1,47 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import '../assets/styles/App.scss';
-import Header from '../componets/Header';
 import Search from '../componets/Search';
 import Categories from '../componets/Categories';
 import Carousel from '../componets/Carousel';
 import CarouselItem from '../componets/CarouselItem';
-import Footer from '../componets/Footer';
-import useInitialState from '../hooks/useInitalState';
 
-const API = 'http://192.168.100.141:3000/initialState';
-const Home = () => {
+const Home = ({ mylist, trends, originals }) => {
 
-  const initialState = useInitialState(API);
-  return initialState.length === 0 ? (<h1>Loading...</h1>) : (
+  return (
     <div className='App'>
-      <Header />
+
       <Search />
-      {initialState.mylist.length > 0 && (
+      {mylist.length > 0 && (
         <Categories title='Mi Lista'>
           <Carousel>
-            {initialState.mylist.map((item) => <CarouselItem key={item.id} cover={item.cover} title={item.title} year={item.year} contentRating={item.contentRating} duration={item.duration} />)}
+            {mylist.map((item) => <CarouselItem key={item.id} cover={item.cover} title={item.title} year={item.year} contentRating={item.contentRating} duration={item.duration} />)}
           </Carousel>
         </Categories>
       )}
 
       <Categories title='Originales de Platzi Video'>
         <Carousel>
-          {initialState.originals.map((item) => <CarouselItem key={item.id} cover={item.cover} title={item.title} year={item.year} contentRating={item.contentRating} duration={item.duration} />)}
+          {originals.map((item) => <CarouselItem key={item.id} cover={item.cover} title={item.title} year={item.year} contentRating={item.contentRating} duration={item.duration} />)}
         </Carousel>
       </Categories>
 
       <Categories title='Tendencias'>
         <Carousel>
-          {initialState.trends.map((item) => <CarouselItem key={item.id} cover={item.cover} title={item.title} year={item.year} contentRating={item.contentRating} duration={item.duration} />)}
+          {trends.map((item) => <CarouselItem key={item.id} cover={item.cover} title={item.title} year={item.year} contentRating={item.contentRating} duration={item.duration} />)}
         </Carousel>
       </Categories>
 
-      <Footer />
     </div>
   );
 };
-export default Home;
+
+const mapStateToProps = (state) => {
+  return {
+    mylist: state.mylist,
+    trends: state.trends,
+    originals: state.originals,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);
