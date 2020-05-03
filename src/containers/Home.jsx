@@ -9,7 +9,7 @@ import Footer from '../componets/Footer';
 import useInitialState from '../hooks/useInitalState';
 
 const API = 'http://192.168.100.141:3000/initialState';
-const App = () => {
+const Home = () => {
 
   const initialState = useInitialState(API);
   return initialState.length === 0 ? (<h1>Loading...</h1>) : (
@@ -40,4 +40,4 @@ const App = () => {
     </div>
   );
 };
-export default App;
+export default Home;

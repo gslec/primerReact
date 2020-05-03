@@ -52,7 +52,9 @@ module.exports = {
       },
     ],
   },
-
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new HmtlWebPackPlugin({
       template: './public/index.html',
