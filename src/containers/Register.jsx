@@ -1,20 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import '../assets/styles/components/Register.scss';
+import { registerRequest } from '../actions';
 
-const Register = () => (
-  <section className='register'>
-    <section className='register__container'>
-      <h2>Regístrate</h2>
-      <form className='register__container--form'>
-        <input className='input' type='text' placeholder='Nombre' />
-        <input className='input' type='text' placeholder='Correo' />
-        <input className='input' type='password' placeholder='Contraseña' />
-        <button className='button' type='button'>Registrarme</button>
-      </form>
-      <Link to='/login'> Iniciar sesión</Link>
+const Register = (props) => {
+  const [form, setValues] = useState({
+    email: '',
+    name: '',
+    password: '',
+  });
+
+  const handleInpunt = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.registerRequest(form);
+    props.history.push('/');
+  };
+
+  return (
+    <section className='register'>
+      <section className='register__container'>
+        <h2>Regístrate</h2>
+        <form className='register__container--form' onSubmit={handleSubmit}>
+          <input
+            name='name'
+            className='input'
+            type='text'
+            placeholder='Nombre'
+            onChange={handleInpunt}
+          />
+          <input
+            name='email'
+            className='input'
+            type='text'
+            placeholder='Correo'
+            onChange={handleInpunt}
+          />
+          <input
+            name='password'
+            className='input'
+            type='password'
+            placeholder='Contraseña'
+            onChange={handleInpunt}
+          />
+          <button className='button' type='submit'>Registrarme</button>
+        </form>
+        <Link to='/login'> Iniciar sesión</Link>
+      </section>
     </section>
-  </section>
-);
+  );
+};
 
-export default Register;
+const mapDispatchToProps = { registerRequest };
+export default connect(null, mapDispatchToProps)(Register);
