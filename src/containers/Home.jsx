@@ -6,8 +6,7 @@ import Categories from '../componets/Categories';
 import Carousel from '../componets/Carousel';
 import CarouselItem from '../componets/CarouselItem';
 
-const Home = ({ mylist, trends, originals, estado }) => {
-  console.log(estado);
+const Home = ({ mylist, trends, originals }) => {
   return (
     <div className='App'>
 
@@ -72,7 +71,6 @@ const mapStateToProps = (state) => {
     mylist: state.mylist,
     trends: state.trends,
     originals: state.originals,
-    estado: state,
   };
 };
 
