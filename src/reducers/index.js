@@ -41,6 +41,23 @@ const reducer = (state, action) => {
       };
     }
 
+    case 'SEARCH_REQUEST': {
+      if (action.payload.trim() === '') {
+        return {
+          ...state,
+          buscando: false,
+          searchResult: [],
+        };
+      }
+      return {
+        ...state,
+        buscando: true,
+        searchResult: state.trends
+          .concat(state.originals)
+          .filter((item) => item.title.toLowerCase().includes(action.payload.toLowerCase())),
+      };
+    }
+
     default: return state;
   }
 };

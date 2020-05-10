@@ -6,11 +6,35 @@ import Categories from '../componets/Categories';
 import Carousel from '../componets/Carousel';
 import CarouselItem from '../componets/CarouselItem';
 
-const Home = ({ mylist, trends, originals }) => {
+const Home = ({ mylist, trends, originals, search, buscando }) => {
+  console.log(search.length);
+  console.log(buscando);
   return (
     <div className='App'>
 
-      <Search />
+      <Search isHome />
+
+      {
+        search.length > 0 ? (
+          <Categories title='Resultado de busqueda'>
+            <Carousel>
+              {search.map((item) => (
+                <CarouselItem
+                  key={item.id}
+                  id={item.id}
+                  cover={item.cover}
+                  title={item.title}
+                  year={item.year}
+                  contentRating={item.contentRating}
+                  duration={item.duration}
+                />
+              ))}
+            </Carousel>
+          </Categories>
+        ) : buscando && <h1>Video no encontrado</h1>
+
+      }
+
       {mylist.length > 0 && (
         <Categories title='Mi Lista'>
           <Carousel>
@@ -71,6 +95,8 @@ const mapStateToProps = (state) => {
     mylist: state.mylist,
     trends: state.trends,
     originals: state.originals,
+    search: state.searchResult,
+    buscando: state.buscando,
   };
 };
 
